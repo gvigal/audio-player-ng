@@ -1,0 +1,59 @@
+<div class="container" #container
+     [class.container-expanded]=" showList"
+     (mouseup)="resetPointersEvents()"
+     (mouseenter)="showProgress('enter')"
+     (mouseleave)="showProgress('leave')">
+
+  <section class="player">
+    <header class="player-header">
+
+      <div class="song">
+        <p>
+          <span class="header-title">{{ playlistSelected?.title }}</span>
+        </p>
+        <p>
+          <span class="header-song-title">{{ playlistSelected?.songs[indexSong].title }}</span>
+          <span>{{ playlistSelected?.group ? '-' : '' }}</span>
+          <span class="header-group">{{ playlistSelected?.group }}</span>
+        </p>
+      </div>
+
+      <!-- minimize/maximize buttons -->
+      <nav class="minimize" (click)="minimize()">
+        <button type="button" title="minimize" *ngIf="!stateMinimize">
+          <i class="fas fa-window-minimize"></i>
+        </button>
+        <button type="button" title="maximize" *ngIf="stateMinimize">
+          <i class="fas fa-window-maximize"></i>
+        </button>
+      </nav>
+    </header>
+
+    <app-graphics *ngIf="!stateMinimize" [options]="options" [type]="graphicsType"></app-graphics>
+
+    <app-controls class="controls" (actionEmitter)="checkAction($event)">
+
+      <span class="counter-time" (click)="isToggledCounterTime = !isToggledCounterTime">
+            {{isToggledCounterTime ? '-' : '&nbsp;'}}{{ counterTime | counter }} / {{ durationTime | counter }}
+      </span>
+    </app-controls>
+
+    <section class="progress"
+             [class.progress-expanded]="expandProgress || showList"
+             [style.pointer-events]="playlistCmp?.isActiveScrollbar ? 'none' : 'auto'">
+
+      <app-progress [duration]="durationTime" (seek_)="seek($event)"></app-progress>
+    </section>
+  </section>
+
+  <section class="playlist-cmp" *ngIf="showList">
+
+
+    <app-playlist class="playlist-box"
+                  [ngStyle]="{ 'pointer-events': progressCmp?.isActiveProgress ? 'none' : 'auto',
+                                height: options.playlistPosition == 'left' ? container.clientHeight + 'px' : 'inherit'}"
+                  [indexSong]="indexSong"
+                  [playlist]="playlistSelected"
+                  (load_)="loadSong($event)"></app-playlist>
+  </section>
+</div>

@@ -1,0 +1,101 @@
+<div class="controls-container">
+  <nav class="nav-control control-player">
+
+    <!--stepBackward-->
+    <button type="button" (click)="action( ActionType.STEP_BACKWARD )">
+      <i class="fas fa-step-backward" [class.active]="stateStepBackward"></i>
+    </button>
+
+    <!--stepForward-->
+    <button type="button" (click)="action( ActionType.STEP_FORWARD )">
+      <i class="fas fa-step-forward" [class.active]="stateStepForward"></i>
+    </button>
+
+    <!--loop-->
+    <button type="button" class="loop" (click)="action( ActionType.LOOP )">
+      <i class="fas fa-sync-alt" [class.active]="stateLoop"></i>
+      <span class="loop-type"  *ngIf="stateLoop == 'song'">1</span>
+    </button>
+
+    <!--random-->
+    <button type="button" (click)="action( ActionType.RANDOM )">
+      <i class="fas fa-random" [class.active]="stateRandom"></i>
+    </button>
+
+    <!--volume-->
+    <div class="volume">
+
+      <div (click)="action( ActionType.MUTE )">
+        <button type="button" *ngIf="stateMute">
+          <i class="fas fa-volume-off" [class.active]="stateMute"></i>
+        </button>
+        <button type="button" *ngIf="!stateMute">
+          <i class="fas fa-volume-up"></i>
+        </button>
+      </div>
+
+      <div class="bar-volume"
+           (mousemove)="actionVolume($event)"
+           (mousedown)="actionVolume($event)"
+           (mouseenter)="actionVolume($event)"
+           (mouseleave)="actionVolume($event)">
+
+        <div class="progress-volume"
+             [ngStyle]="{ 'width': volumeProgress * 100 + '%' }"></div>
+
+        <div class="tooltip volume-tip" #tooltip
+             [class.show-tooltip]="showVolumeTooltip" [style.left]="volumeTooltipLeft">
+
+          <span>{{volumeTooltipData * 100 | number}}%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- graphics -->
+    <button type="button" *ngIf="stateChartbar" (click)="action( ActionType.OSCILLOSCOPE )">
+      <i class="fas fa-chart-line" [class.active]="stateOscilloscope"></i>
+    </button>
+    <button type="button" *ngIf="stateOscilloscope" (click)="action( ActionType.CHARTBAR )">
+      <i class="fas fa-chart-bar" [class.active]="stateChartbar"></i>
+    </button>
+
+  </nav>
+
+  <nav class="nav-control control-song">
+
+    <!--backward-->
+    <button type="button"
+            (mousedown)="actionBackward($event)"
+            (mouseup)="actionBackward($event)">
+      <i class="fas fa-backward" [class.active]="stateBackward"></i>
+    </button>
+
+    <!--play/pause-->
+    <button type="button" class="play" (click)="action( ActionType.PLAY_PAUSE )">
+      <i class="fas fa-play " [ngClass]="{'active': statePlay, 'init-play': stateStop }"></i>
+      <i class="fas fa-pause" [class.active]="statePause"></i>
+    </button>
+
+    <!--stop-->
+    <button type="button" (click)="action( ActionType.STOP )">
+      <i class="fas fa-stop" [class.active]="stateStop"></i>
+    </button>
+
+    <!--forward-->
+    <button type="button"
+            (mousedown)="actionForward($event)"
+            (mouseup)="actionForward($event)">
+      <i class="fas fa-forward" [class.active]="stateForward"></i>
+    </button>
+
+    <!-- timer -->
+    <div class="time">
+      <ng-content></ng-content>
+    </div>
+
+    <!-- playlist -->
+    <button type="button" [class.active]="stateList" (click)="action( ActionType.LIST )">
+      <i class="fas fa-list"></i>
+    </button>
+  </nav>
+</div>

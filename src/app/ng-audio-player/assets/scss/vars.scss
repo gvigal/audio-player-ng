@@ -1,0 +1,41 @@
+@import "defaults";
+
+$playlist-position: "bottom";
+$width: 300px;
+
+//@if $playlist-position == 'left' or $playlist-position == 'right' {
+//$width: $width * 2;
+//}
+
+/* PLAYER */
+$background-color-player: linear-gradient(#3B206F 25%, #9A66FF 50%, #3B206F 75%);
+$background-color-player-header: linear-gradient(#4A65BA 5%, #3B206F , #4A65BA 95%);
+$color-player: #816CF9;
+$color-player-header: #FFFFFF;
+
+/* GRAPHICS */
+$background-color-graphics: #5E7FEB;
+$color-graphics: hsl(110, 100%, 49%);
+
+/* PROGRESS */
+$background-color-progress: #160047;
+$color-progress: #816CF9;
+
+
+/* CONTROLS */
+$background-color-control: linear-gradient(#3B206F 5%, #6134B6 20%,  #C6A8FF, #6134B6 80%, #3B206F 95%);
+$background-color-volume: $background-color-progress;
+$color-volume: $color-progress;
+$color-button: #160047;
+$color-active-control: rgb(0, 255, 0);
+
+/* PLAYLIST*/
+$background-color-playlist: linear-gradient(#3B206F 5%, #704ABA , #3B206F 95%);
+$background-color-selected-song: linear-gradient(#4A65BA 5%, #3B206F , #4A65BA 95%);
+$color-playlist: #000;
+$color-selected-song: #fff;
+
+
+/* tooltip  */
+$background-color-tooltip: hsl(65, 44%, 73%);
+$color-tooltip: hsl(245, 50%, 35%);

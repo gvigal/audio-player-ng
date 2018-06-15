@@ -1,0 +1,12 @@
+<div class="graphics-container">
+
+  <section class="oscilloscope"
+           [ngStyle]="{ 'display': displayOsc ? 'block' : 'none' }">
+    <canvas #oscChart></canvas>
+  </section>
+
+  <section class="frequency"
+           [ngStyle]="{ 'display': displayFreq ? 'block': 'none' }">
+    <canvas #freqChart></canvas>
+  </section>
+</div>

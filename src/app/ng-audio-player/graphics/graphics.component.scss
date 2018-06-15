@@ -1,0 +1,27 @@
+@import "../assets/scss/vars";
+
+.oscilloscope {
+  background: $background-color-graphics;
+  height: $height;
+  width: $width;
+
+  canvas {
+    background: $background-color-graphics;
+    color: $color-graphics;
+    height: $height;
+    width: $width;
+  }
+}
+
+.frequency {
+  background: $background-color-graphics;
+  height: $height;
+  width: $width;
+
+  canvas {
+    background: $background-color-graphics;
+    color: $color-graphics;
+    height: $height;
+    width: $width;
+  }
+}

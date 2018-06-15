@@ -1,0 +1,140 @@
+@import '../assets/scss/vars';
+
+:host {
+  display: flex;
+}
+
+.container {
+  border: 2px solid #dc5e58;
+  border-radius: 3px;
+  display: flex;
+  flex: 0 1 $width;
+
+  @if $playlist-position == 'left' {
+    flex-direction: row;
+  } @else if $playlist-position == 'right' {
+    flex-direction: row-reverse;
+  } @else if $playlist-position == 'top' {
+    flex-direction: column-reverse;
+  } @else {
+    flex-direction: column;
+  }
+}
+
+.container-expanded {
+  @if $playlist-position == 'left'  or $playlist-position == 'right' {
+    width: $width * 2;
+  } @else {
+    width: $width;
+  }
+}
+
+.player {
+  width: $width;
+}
+
+header {
+  background: $background-color-player-header;
+  color: $color-player-header;
+  flex: 1 1 100%;
+  padding: 2px 4px;
+  position: relative;
+
+  nav {
+    align-items: center;
+    display: flex;
+    height: .6rem;
+    justify-content: center;
+    margin: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      align-items: flex-start;
+      background: transparent;
+      border: 0;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+      display: flex;
+      height: .6rem;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      transition: transform .1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2, 1.2);
+        z-index: 110;
+      }
+
+      i {
+        display: block;
+        font-size: .6rem;
+        transform: none;
+      }
+    }
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+  }
+}
+
+.header-title {
+  font-size: .85rem;
+  font-style: italic;
+}
+
+.header-group {
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.header-song-title {
+  font-size: .85rem;
+  font-weight: 300;
+}
+
+.controls {
+  //border-top: 1px solid rgba(20, 0, 0, .3);
+  flex-grow: 0;
+}
+
+//.progress {
+//  position: relative;
+//}
+
+.counter-time {
+  display: block;
+  width: 100%;
+}
+
+.progress {
+  display: block;
+  user-select: none;
+  height: $progress-height;
+  transition: height .2s ease-in-out;
+}
+
+.progress-expanded {
+
+  height: $progress-height-expanded;
+}
+
+.playlist-cmp {
+  height: $playlist-height;
+  width: $width;
+}
+
+.playlist-box {
+  height: auto;
+  overflow-y: hidden;
+}
+
+
+.minimize {
+  i {
+    color: $color-player-header;
+  }
+}

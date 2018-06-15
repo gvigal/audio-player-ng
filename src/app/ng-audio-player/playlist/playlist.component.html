@@ -1,0 +1,44 @@
+<section class="playlist-container" draggable="false"
+         (mouseleave)="isExpandScrollbar = false">
+
+  <ul draggable="false" #box
+      (wheel)="scroll($event)"
+      (mousemove)="showScrollbar($event)">
+
+    <li *ngFor="let song of playlist?.songs; let i = index"
+        (click)="load(i)"
+        [class.selected-song]="activeSong == song"
+        [style.pointer-events]="isActiveScrollbar ? 'none' : 'auto'">
+
+      <span class="index">{{i + 1}}</span>
+
+      <div class="song">
+        <p class="title"
+           [title]="song.title"
+           (mouseenter)="scrollSong($event)"
+           (mouseleave)="scrollSong($event)">
+
+          <span>{{song.title}}</span></p>
+        <p class="header"
+           (mouseenter)="scrollSong($event)"
+           (mouseleave)="scrollSong($event)">
+
+          <span class="group">{{song.group}}</span> - <span class="disc">{{song.disc}}</span>
+        </p>
+      </div>
+
+      <span class="duration">{{song?.duration | counter}}</span>
+    </li>
+  </ul>
+
+  <!-- scrollbar -->
+  <div class="scrollbar" draggable="false"
+       [class.expand]="isExpandScrollbar"
+       (click)="scroll($event)"
+       (wheel)="scroll($event)"
+       (mousemove)="scroll($event)"
+       (mouseleave)="scroll($event)">
+
+    <div class="bar-scroll" [style.height.px]="scrollbar"></div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+$width: 240px;
+$height: 80px;
+$height-progress: 12px;
+
+/* HELPERS */
+
+
+/* PLAYER */
+$background-color-player: hsl(354, 72%, 46%);
+$background-color-player-header: hsl(269, 95%, 89%);
+$color-player: hsl(240, 3%, 7%);
+$color-player-header: hsl( 217, 89%, 100%);
+
+/* GRAPHICS */
+$background-color-graphics: hsl(290, 45%, 49%);
+$color-graphics: hsl(110, 100%, 49%);
+
+/* PROGRESS */
+$background-color-progress: hsl(167, 31%, 24%);
+$color-progress: hsl(59, 78%, 54%);
+
+$progress-height: 3px;
+$progress-height-expanded: 12px;
+
+/* CONTROLS */
+$background-color-control: $background-color-player;
+$background-color-volume: $background-color-progress;
+$color-volume: $color-progress;
+$color-button: $color-player;
+$color-active-control: rgb(0, 255, 0);
+
+$color-button-shadow: hsla(167, 60%, 60%, 1);
+$background-color-timer: #160047;
+$color-timer: #816CF9;
+
+/* PLAYLIST*/
+$background-color-playlist: hsl(278, 100%, 70%);
+$background-color-selected-song: hsl(275, 44%, 63%);
+$color-playlist: hsl(26, 15%, 20%);
+$color-selected-song: hsl(167, 31%, 24%);
+
+$playlist-height: 150px;
+
+// top: column-reverse, left: row, bottom: column, right:row-reverse
+$playlist-position: "bottom";
+
+/* tooltip  */
+$background-color-tooltip: hsl(65, 44%, 73%);
+$color-tooltip: hsl(245, 50%, 35%);
+$border-color-tooltip: $background-color-tooltip transparent transparent transparent;
+
+
