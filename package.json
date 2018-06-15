@@ -1,6 +1,9 @@
 {
   "name": "audio-player-ng",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Gaspar Villar",
+  "description": "Simple Angular audio player",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +12,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
