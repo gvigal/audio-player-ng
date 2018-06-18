@@ -90,7 +90,8 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
     // Lamda for control graphics of the player, it is used with requestAnimationFrame
     draw:(timestamp:number) => void;
 
-    constructor(private cd:ChangeDetectorRef) {
+    // constructor(private cd:ChangeDetectorRef) {
+    constructor() {
 
         this.state = AudioState.STOPPED;
         this.source = AudioSourceFactory.getSource("element");
