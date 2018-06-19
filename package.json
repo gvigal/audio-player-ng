@@ -10,9 +10,14 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy": "cp LICENSE.txt dist",
+    "packagr": "ng-packagr -p ng-package.json && ng run copy"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0-4"
+  },
+  "peerDependencies": {
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
@@ -22,7 +27,6 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
-    "@fortawesome/fontawesome-free": "^5.1.0-4",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

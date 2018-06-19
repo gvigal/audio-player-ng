@@ -52,20 +52,47 @@ export abstract class AudioSource {
     abstract get autoplay():boolean;
     abstract set autoplay(autoplay:boolean);
 
+    /**
+     * Play the source
+     */
     abstract play();
 
+    /**
+     * Stop the source
+     */
     abstract stop();
 
+    /**
+     * Pause the source
+     */
     abstract pause();
 
+    /**
+     * Seek the data
+     * @param seconds
+     */
     abstract seek(seconds:number);
 
+    /**
+     * Return the duration in seconds
+     */
     abstract getDuration():number;
 
+    /**
+     * Returns the current playing time in seconds
+     */
     abstract getCurrentTime():number;
 
+    /**
+     * Mute / unmute the source
+     * @param mute
+     */
     abstract setMute(mute:number);
-    
+
+    /**
+     * Load the audio source from the url
+     * @param url
+     */
     abstract load(url:string);
 
     /**

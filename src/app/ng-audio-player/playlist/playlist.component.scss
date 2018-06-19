@@ -24,8 +24,7 @@ ul {
   user-select: none;
 
   li:last-child {
-
-  border-bottom: none;
+    border-bottom: 0;
   }
 }
 
@@ -42,6 +41,7 @@ li {
 
   background: $background-color-playlist;
   color: $color-playlist;
+
   span {
     flex: 0 1 2rem;
   }
