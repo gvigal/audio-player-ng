@@ -57,9 +57,9 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
     playlistData:PlaylistData;
 
     // Ids for requestAnimationFrame and setTimeout
-    forwardId:number;
-    backwardId:number;
-    animationId:number;
+    forwardId:any;
+    backwardId:any;
+    animationId:any;
 
     // Loop type
     loop:string;
@@ -139,7 +139,7 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
                 this.setRandom(event.data);
                 break;
             case ActionType.MUTE:
-                this.source.setMute(event.data);
+                this.mute();
                 break;
             case ActionType.VOLUME:
                 this.volume = event.data;
@@ -331,7 +331,7 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
      */
     mute() {
         this.stateMuted = !this.stateMuted;
-        this.source.setMute(this.stateMuted);
+        this.source.setMute((this.stateMuted ? 0.0 : this.volume));
     }
 
     /**

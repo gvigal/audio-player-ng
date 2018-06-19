@@ -1,7 +1,7 @@
 import {Observable, Subject} from "rxjs";
 declare var webkitAudioContext:any;
 
-let audioContext;
+export let audioContext:any = {};
 
 // get cross-browser compatiblity AudioContext
 try {
@@ -64,7 +64,7 @@ export abstract class AudioSource {
 
     abstract getCurrentTime():number;
 
-    abstract setMute(mute:boolean);
+    abstract setMute(mute:number);
     
     abstract load(url:string);
 

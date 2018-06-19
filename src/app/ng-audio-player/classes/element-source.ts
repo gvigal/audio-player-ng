@@ -52,8 +52,8 @@ export class ElementSource extends AudioSource {
         return this.audio.currentTime;
     }
 
-    setMute(mute:boolean) {
-        this.audio.muted = mute;
+    setMute(mute:number) {
+        this.setVolume(mute);
     }
 
     load(url:string) {

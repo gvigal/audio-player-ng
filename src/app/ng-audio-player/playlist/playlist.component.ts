@@ -33,8 +33,8 @@ export class PlaylistComponent implements OnInit, OnChanges, AfterViewInit {
     isExpandScrollbar:boolean;
     isActiveScrollbar:boolean;
 
-    // constructor(private cd:ChangeDetectorRef) {
-    constructor() {
+    constructor(private cd:ChangeDetectorRef) {
+    // constructor() {
         this.load_ = new EventEmitter();
         this.isExpandScrollbar = false;
         this.isActiveScrollbar = false;
@@ -54,7 +54,7 @@ export class PlaylistComponent implements OnInit, OnChanges, AfterViewInit {
         this.scrollbarBase = clientHeight * (clientHeight / scrollHeight );
         this.scrollbar = this.scrollbarBase;
         this.updateActiveSong(this.indexSong);
-        // this.cd.detectChanges();
+        this.cd.detectChanges();
     }
 
     /**
@@ -172,7 +172,7 @@ export class PlaylistComponent implements OnInit, OnChanges, AfterViewInit {
      * Check if the scroll of playlist is out of range
      *
      * @param scroll
-     * @returns {number}
+     * @returns number
      */
     private checkScroll(scroll:number) {
 
