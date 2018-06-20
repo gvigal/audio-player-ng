@@ -15,7 +15,7 @@
   width: 0;
 }
 
-.tooltip {
+.progress-tooltip {
   background: $background-color-tooltip;
   border-color: $border-color-tooltip;
   border-radius: 2px;
@@ -34,7 +34,6 @@
 .show-tooltip {
   visibility: visible;
 }
-
 
 .tooltip-arrow {
   border-style: solid;

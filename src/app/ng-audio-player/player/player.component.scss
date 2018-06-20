@@ -4,36 +4,36 @@
   display: flex;
 }
 
-.container {
+.player-container {
   border: 2px solid #dc5e58;
   border-radius: 3px;
   display: flex;
-  flex: 0 1 $width;
+  flex: 0 1 auto;
 
-  @if $playlist-position == 'left' {
-    flex-direction: row;
-  } @else if $playlist-position == 'right' {
-    flex-direction: row-reverse;
-  } @else if $playlist-position == 'top' {
-    flex-direction: column-reverse;
-  } @else {
-    flex-direction: column;
-  }
+  //@if $playlist-position == 'left' {
+  //  flex-direction: row;
+  //} @else if $playlist-position == 'right' {
+  //  flex-direction: row-reverse;
+  //} @else if $playlist-position == 'top' {
+  //  flex-direction: column-reverse;
+  //} @else {
+  //  flex-direction: column;
+  //}
 }
 
-.container-expanded {
-  @if $playlist-position == 'left'  or $playlist-position == 'right' {
-    width: $width * 2;
-  } @else {
-    width: $width;
-  }
-}
+//.container-expanded {
+//  @if $playlist-position == 'left'  or $playlist-position == 'right' {
+//    width: $width * 2;
+//  } @else {
+//    width: $width;
+//  }
+//}
 
-.player {
-  width: $width;
-}
+//.player {
+//  width: $width;
+//}
 
-header {
+.player-header {
   background: $background-color-player-header;
   color: $color-player-header;
   flex: 1 1 100%;
@@ -97,13 +97,8 @@ header {
 }
 
 .controls {
-  //border-top: 1px solid rgba(20, 0, 0, .3);
   flex-grow: 0;
 }
-
-//.progress {
-//  position: relative;
-//}
 
 .counter-time {
   display: block;
@@ -112,13 +107,12 @@ header {
 
 .progress {
   display: block;
-  user-select: none;
   height: $progress-height;
   transition: height .2s ease-in-out;
+  user-select: none;
 }
 
 .progress-expanded {
-
   height: $progress-height-expanded;
 }
 
@@ -131,7 +125,6 @@ header {
   height: auto;
   overflow-y: hidden;
 }
-
 
 .minimize {
   i {

@@ -1,5 +1,5 @@
-<div class="container" #container
-     [class.container-expanded]=" showList"
+<div class="player-container" #container
+     [style.flex-direction]="options.playlistPosition"
      (mouseup)="resetPointersEvents()"
      (mouseenter)="showProgress('enter')"
      (mouseleave)="showProgress('leave')">
@@ -51,7 +51,8 @@
 
     <app-playlist class="playlist-box"
                   [ngStyle]="{ 'pointer-events': progressCmp?.isActiveProgress ? 'none' : 'auto',
-                                height: options.playlistPosition == 'left' ? container.clientHeight + 'px' : 'inherit'}"
+                                height: (options.playlistPosition == 'row' || options.playlistPosition == 'row-reverse')
+                                 ? container.clientHeight + 'px' : 'inherit'}"
                   [indexSong]="indexSong"
                   [playlist]="playlistSelected"
                   (load_)="loadSong($event)"></app-playlist>

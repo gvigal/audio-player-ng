@@ -6,7 +6,7 @@
 
   <div class="progress-song" [style.width.%]="songProgress * 100"></div>
 
-  <div class="tooltip progress-tip" [class.show-tooltip]="showTooltip" [style.left.px]="tooltipLeft" #tooltip>
+  <div class="progress-tooltip" [class.show-tooltip]="showTooltip" [style.left.px]="tooltipLeft" #tooltip>
 
     <span>{{ tooltipData * duration | counter }} / {{ duration | counter }}</span>
     <div class="tooltip-arrow" [style.left.px]="arrowLeft"></div>

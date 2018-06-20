@@ -3,7 +3,6 @@ import {
     OnInit,
     Input,
     ViewChild,
-    ChangeDetectorRef,
     OnDestroy,
     AfterViewInit
 } from '@angular/core';
@@ -90,7 +89,6 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
     // Lamda for control graphics of the player, it is used with requestAnimationFrame
     draw:(timestamp:number) => void;
 
-    // constructor(private cd:ChangeDetectorRef) {
     constructor() {
 
         this.state = AudioState.STOPPED;
@@ -485,8 +483,10 @@ export class PlayerComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngOnInit() {
         let defaultOptions = {
-            graphicsWidth: this.options.width,
             graphicsHeight: 60,
+            freqFillStyle: this.options.freqFillStyle || this.options.oscFillStyle,
+            freqStrokeStyle: this.options.freqStrokeStyle || this.options.oscStrokeStyle,
+            playlistPosition: "column",
             loadDuration: true
         };
 

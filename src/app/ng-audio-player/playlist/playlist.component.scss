@@ -6,7 +6,6 @@
 }
 
 .playlist-container {
-  border-bottom: 1px solid #dadbdc;
   height: inherit;
   position: relative;
   user-select: none;
@@ -28,7 +27,7 @@ ul {
   }
 }
 
-li {
+.song-box {
   align-items: center;
   border-bottom: 1px solid #dadbdc;
   display: flex;

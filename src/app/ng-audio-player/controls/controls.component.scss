@@ -23,7 +23,7 @@ button::-moz-focus-inner {
   }
 }
 
-nav {
+.nav-control {
   align-items: center;
   color: $color-player;
   display: flex;
@@ -87,7 +87,7 @@ nav {
   justify-content: center;
   position: relative;
 
-  span {
+  .loop-type {
     color: $color-active-control;
     font-size: .6rem;
     padding-bottom: 3px;
@@ -130,7 +130,7 @@ nav {
   width: 0;
 }
 
-.time {
+.timer {
   background: $background-color-timer;
   color: $color-timer;
   font-size: .8rem;

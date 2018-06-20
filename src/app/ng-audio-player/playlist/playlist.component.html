@@ -5,7 +5,8 @@
       (wheel)="scroll($event)"
       (mousemove)="showScrollbar($event)">
 
-    <li *ngFor="let song of playlist?.songs; let i = index"
+    <li class="song-box"
+            *ngFor="let song of playlist?.songs; let i = index"
         (click)="load(i)"
         [class.selected-song]="activeSong == song"
         [style.pointer-events]="isActiveScrollbar ? 'none' : 'auto'">

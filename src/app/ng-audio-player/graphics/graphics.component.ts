@@ -41,7 +41,7 @@ export class GraphicsComponent implements OnInit {
         canvasCtx = canvas.getContext('2d'),
         bufferLength = timeData.length;
 
-    let width = this.options.graphicsWidth;
+    let width = this.options.width;
     let height = this.options.graphicsHeight;
     canvas.width = width;
     canvas.height = height;
@@ -89,7 +89,7 @@ export class GraphicsComponent implements OnInit {
     let dbRange = 80;
 
     let height = this.options.graphicsHeight;
-    let width = this.options.graphicsWidth;
+    let width = this.options.width;
 
     let canvas = this.freqChart.nativeElement,
         color = this.options.freqStrokeStyle,
