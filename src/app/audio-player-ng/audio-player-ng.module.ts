@@ -21,6 +21,6 @@ import { NumberPipe } from './pipes/number.pipe';
     ],
     exports: [PlayerComponent]
 })
-export class NgAudioPlayerModule {
+export class AudioPlayerNgModule {
 }
  

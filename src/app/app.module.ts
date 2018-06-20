@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import {AppComponent} from './app.component';
-import {NgAudioPlayerModule} from './ng-audio-player/ng-audio-player.module'
+import {AudioPlayerNgModule} from './audio-player-ng/audio-player-ng.module'
 
 @NgModule({
     declarations: [
@@ -11,7 +11,7 @@ import {NgAudioPlayerModule} from './ng-audio-player/ng-audio-player.module'
     imports: [
         BrowserModule,
         HttpClientModule,
-        NgAudioPlayerModule
+        AudioPlayerNgModule
     ],
     providers: [],
     bootstrap: [AppComponent]
