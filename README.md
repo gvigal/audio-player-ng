@@ -13,9 +13,7 @@ Simple audio player for angular 2+
 #### Dependencies
 
 ##### fontawesome-free
-```
-    npm install @fortawsome/fontawesome-free --save
-```
+
 in angular.json
 ```
     "projects": {
@@ -48,10 +46,11 @@ in `*.module.ts`
 ```typescript
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 
 // import the module
-import {AudioPlayerNgModule} from 'audio-player-ng'
+import {AudioPlayerNgModule} from 'audio-player-ng';
 
 @NgModule({
     declarations: [
@@ -59,6 +58,7 @@ import {AudioPlayerNgModule} from 'audio-player-ng'
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AudioPlayerNgModule
     ],
     bootstrap: [AppComponent]
@@ -89,15 +89,15 @@ import { OptionsPlayer, PlaylistData } from "audio-player-ng/audio-player-ng/cla
 export class AppComponent {
 
   options:OptionsPlayer;
-  playlist:Observable<PlaylistData> ={};
+  playlist:Observable<PlaylistData>;
 
   constructor(private http:HttpClient) {
       this.options = {
-            graphicsWidth: 300,
+            width: 300,
             oscFillStyle: 'hsl(290, 45%, 49%)',
             oscStrokeStyle: 'hsl(110, 100%, 49%)'
         };
-      let path =  "" // the playlist url
+      let path =  ""; // the playlist url
 
       this.playlist = this.http.get<PlaylistData>(path);
   }
