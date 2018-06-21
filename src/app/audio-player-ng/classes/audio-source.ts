@@ -97,7 +97,7 @@ export abstract class AudioSource {
 
     /**
      * Default AudioContext Object
-     * @returns {AudioContext}
+     * @returns AudioContext
      */
     static getContext():AudioContext {
         return audioContext;
@@ -119,14 +119,17 @@ export abstract class AudioSource {
         this.analyser.connect(this.gain);
         this.gain.connect(destination);
     }
-    
+
+    /**
+     * Disconnect the source
+     */
     disconnect() {
         this.source.disconnect(this.analyser);
     }
 
     /**
      * Time Domain Data
-     * @returns {Uint8Array}
+     * @returns Uint8Array
      */
     getTimeData():Uint8Array {
         this.analyser.getByteTimeDomainData(this.timeData)
@@ -135,7 +138,7 @@ export abstract class AudioSource {
 
     /**
      *  Frequency Domain Data
-     * @returns {Float32Array}
+     * @returns Float32Array
      */
     getFreqData():Float32Array {
         this.analyser.getFloatFrequencyData(this.freqData);
