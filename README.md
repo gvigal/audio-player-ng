@@ -51,7 +51,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 
 // import the module
-import {AudioPlayerNgModule} from './audio-player-ng/audio-player-ng.module'
+import {AudioPlayerNgModule} from 'audio-player-ng'
 
 @NgModule({
     declarations: [
@@ -76,11 +76,13 @@ in `*.component.html`
 
 in `*.component.ts`
 ##### properties
- - options: a OptionsPlayer interface
- - playlist: a Observable of PlaylistData interface
+ - options: a OptionsPlayer interface for config the player
+ - playlist: a Observable of PlaylistData interface for load the playlist
 ```
 ...
-import { OptionsPlayer, PlaylistData } from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { OptionsPlayer, PlaylistData } from "audio-player-ng/audio-player-ng/classes/interfaces";
 
 ...
 

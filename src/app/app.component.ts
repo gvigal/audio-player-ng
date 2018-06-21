@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from 'rxjs';
 
-import {OptionsPlayer, PlaylistData} from './ng-audio-player/classes/interfaces'
+import {OptionsPlayer, PlaylistData} from './audio-player-ng/classes/interfaces'
 
 @Component({
     selector: 'app-root',
