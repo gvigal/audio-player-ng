@@ -4,5 +4,5 @@
     "entryFile": "./src/app/public_api.ts",
      "styleIncludePaths": ["./src/app/audio-player-ng/assets/scss"]
   },
-  "whitelistedNonPeerDependencies": ["@fortawesome/fontawesome-free"]
+  "whitelistedNonPeerDependencies": ["."]
 }

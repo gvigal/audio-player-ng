@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "copy": "cp LICENSE.txt dist",
-    "packagr": "ng-packagr -p ng-package.json && ng run copy"
+    "packagr": "ng-packagr -p ng-package.json && npm run copy"
   },
   "dependencies": {
     "@angular/animations": "^6.0.3",
